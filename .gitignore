@@ -1,0 +1,8 @@
+# Carpetas generadas por .NET
+bin/
+obj/
+
+# Archivos de usuario
+.vs/
+*.user
+*.suo
