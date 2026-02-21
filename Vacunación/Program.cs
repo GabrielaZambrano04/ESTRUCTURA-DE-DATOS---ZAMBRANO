@@ -2,11 +2,11 @@
 using System.Collections.Generic;
 using System.Linq;
 
-class ProgramaVacunacion
+class Vacunacion
 {
     static void Main()
     {
-        // ===== 1. Crear universo de 500 ciudadanos =====
+        // universo de 500 ciudadanos
         HashSet<string> ciudadanos = new HashSet<string>();
 
         for (int i = 1; i <= 500; i++)
@@ -14,13 +14,13 @@ class ProgramaVacunacion
             ciudadanos.Add($"Ciudadano_{i}");
         }
 
-        // ===== 2. Generar 75 vacunados con Pfizer =====
+        // 75 vacunados con Pfizer
         HashSet<string> vacunadosPfizer = GenerarSubconjunto(ciudadanos, 75);
 
-        // ===== 3. Generar 75 vacunados con AstraZeneca =====
+        //75 vacunados con AstraZeneca 
         HashSet<string> vacunadosAstraZeneca = GenerarSubconjunto(ciudadanos, 75);
 
-        // ===== 4. Operaciones de teoría de conjuntos =====
+        // Operaciones de teoría de conjuntos 
 
         // Unión: ciudadanos vacunados con al menos una dosis
         HashSet<string> vacunados = new HashSet<string>(vacunadosPfizer);
@@ -42,7 +42,7 @@ class ProgramaVacunacion
         HashSet<string> soloAstraZeneca = new HashSet<string>(vacunadosAstraZeneca);
         soloAstraZeneca.ExceptWith(vacunadosPfizer);
 
-        // ===== 5. Mostrar resultados =====
+        // Mostrar resultados 
         MostrarResultados("NO VACUNADOS", noVacunados);
         MostrarResultados("AMBAS DOSIS", ambasDosis);
         MostrarResultados("SOLO PFIZER", soloPfizer);
@@ -69,9 +69,9 @@ class ProgramaVacunacion
         Console.WriteLine($"\n=== {titulo} ===");
         Console.WriteLine($"Cantidad: {conjunto.Count}");
 
-        foreach (var ciudadano in conjunto.Take(10)) // muestra solo 10 ejemplos
-        {
-            Console.WriteLine(ciudadano);
+        foreach (var ciudadano in conjunto)
+    {
+        Console.WriteLine(ciudadano);
         }
     }
 }
