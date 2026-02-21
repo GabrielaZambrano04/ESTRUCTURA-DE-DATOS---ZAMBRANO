@@ -66,7 +66,7 @@ class Vacunacion
 
     static void MostrarResultados(string titulo, HashSet<string> conjunto)
     {
-        Console.WriteLine($"\n=== {titulo} ===");
+        Console.WriteLine($"\n - {titulo} -");
         Console.WriteLine($"Cantidad: {conjunto.Count}");
 
         foreach (var ciudadano in conjunto)
